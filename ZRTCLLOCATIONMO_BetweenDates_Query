@@ -1,0 +1,34 @@
+--SQLite query for com.apple.routined - Cache.Sqlite ZRTCLLOCATIONMO Table
+--Database can be located at /private/var/mobile/Library/Caches/com.apple.routined/Cache.sqlite
+--This query has been made so that it only pulls locations with a ZHORIZONTALACCURACY < 65 meters
+--This query has been made so that it only pulls locations between certain dates
+--This query has original data and calculated Accuracy and Speeds
+--This query was tested and works with iOS versions 13.5.1, 14.0.1, 14.4.2, and 14.6
+--For details see blog post here: PENDING
+--By: Scott Koenig bskoenig3347@gmail.com
+--Twitter: @Scott_Kjr
+--Reminder to always test and validate!	
+
+SELECT 
+  DateTime(ZRTCLLOCATIONMO.ZTIMESTAMP + 978307200, 'UNIXEPOCH') AS 'Timestamp in UTC',
+  ZRTCLLOCATIONMO.ZLATITUDE AS 'Latitude',
+  ZRTCLLOCATIONMO.ZLONGITUDE AS 'Longitude',
+  ZRTCLLOCATIONMO.ZHORIZONTALACCURACY AS 'Accuracy in Meters',
+  ZRTCLLOCATIONMO.ZHORIZONTALACCURACY * 3.28084 AS 'Accuracy in Feet',
+  CASE ZRTCLLOCATIONMO.ZSPEED
+    WHEN -1 THEN 'Not_Valid'
+    ELSE ZRTCLLOCATIONMO.ZSPEED
+  END AS 'Speed Meters per Sec',
+  ZRTCLLOCATIONMO.ZSPEED * 2.23694 AS 'Speed Miles Per Hour',
+  CASE ZRTCLLOCATIONMO.ZCOURSE
+    WHEN -1 THEN 'Not_Valid'
+    ELSE ZRTCLLOCATIONMO.ZCOURSE
+  END AS 'Course',
+  CASE ZRTCLLOCATIONMO.ZVERTICALACCURACY
+    WHEN -1 THEN 'Not_Valid'
+    ELSE ZRTCLLOCATIONMO.ZVERTICALACCURACY
+  END AS 'Vertical Accuracy in Meters',
+  ZRTCLLOCATIONMO.Z_PK
+FROM ZRTCLLOCATIONMO
+WHERE ZRTCLLOCATIONMO.ZHORIZONTALACCURACY < 65 AND ZRTCLLOCATIONMO.ZTIMESTAMP BETWEEN '#####' AND '#####'
+ORDER BY ZRTCLLOCATIONMO.ZTIMESTAMP
