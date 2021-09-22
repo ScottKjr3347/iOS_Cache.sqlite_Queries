@@ -2,7 +2,7 @@
 --Database can be located at /private/var/mobile/Library/Caches/com.apple.routined/Cache.sqlite
 --This query has been made so that it only pulls locations with a ZHORIZONTALACCURACY < 65 meters
 --This query has original data and calculated Accuracy and Speeds
---This query was tested in DB Browser for SQLite via multiple versions of iOS 14
+--This query was tested in DB Browser for SQLite via multiple versions of iOS 13.5.1, 14.0.1, 14.4.2, 14.6, and 14.7.1
 --For details see blog post here: PENDING
 --By: Scott Koenig bskoenig3347@gmail.com
 --Twitter: @Scott_Kjr
