@@ -4,7 +4,7 @@
 --This query has been made so that it pulls all locations
 --This query has original data and calculated Accuracy and Speeds
 --This query was tested and works with iOS versions 13.5.1, 14.0.1, 14.4.2, 14.6, 14.7.1 and 15.0.2
---For details see blog post here: PENDING
+--For details see blog post here: http://theforensicscooter.com/2021/09/22/iphone-device-speeds-in-cache-sqlite-zrtcllocationmo/
 --By: Scott Koenig bskoenig3347@gmail.com
 --Twitter: @Scott_Kjr
 --Reminder to always test and validate!	
