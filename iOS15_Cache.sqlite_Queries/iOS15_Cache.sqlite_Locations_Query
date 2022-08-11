@@ -32,15 +32,15 @@ CASE
 CASE	
 		ZRTCLLOCATIONMO.ZTYPE
 		WHEN 1 THEN
-		'Type1-Vaild-Speed-StillTesting-1' 
+		'Type1-zHA3m-351m_StillTesting-1' 
 		WHEN 4 THEN
-		'Type4-Invalid_Speed-StillTesting-4' 
+		'Type4-zHA20m-1192m_StillTesting-4' 
 		WHEN 6 THEN
-		'Type6-zHorizAcc_35m-10445m-StillTesting-6'
+		'Type6-zHA35m-10445m_StillTesting-6'
 		WHEN 7 THEN
-		'Type7-zHorizAcc_39m-46m-StillTesting-7'
+		'Type7-zHA35m-1680m_StillTesting-7'
 		WHEN 9 THEN
-		'Type9-zHorizAcc_200m-StillTesting-9' ELSE 'Unknown-New-Value!: '||ZRTCLLOCATIONMO.ZTYPE||''
+		'Type9-zHA200m-280m_StillTesting-9' ELSE 'Unknown-New-Value!: '||ZRTCLLOCATIONMO.ZTYPE||''
 	END AS 'zType'	
 FROM
 	ZRTCLLOCATIONMO
